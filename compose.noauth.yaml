@@ -10,6 +10,7 @@ services:
       - filebrowser-database:/database
       - filebrowser-config:/config
     environment:
+      - FB_PORT=8006
       # Only honored on first start, when the database is created (quick setup).
       # For an existing database, stop the service first (the DB is locked while running), then:
       #   docker compose -f compose.noauth.yaml run --rm --entrypoint filebrowser filebrowser config set --auth.method=noauth -d /database/filebrowser.db
